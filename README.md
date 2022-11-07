@@ -2,12 +2,28 @@
 
 After a long period of inactivity, I decided to pull two microcontrollers from the ESP32 family out of the drawer and play with them in my spare time.
 
-The first (and the oldest one) is an ESP-WROOM-32 development board
+The first (and the oldest one) is an ESP-WROOM-32 development board.
 
-|                                         |                                   |
-| --------------------------------------- | --------------------------------- |
-| ![ESP-WROOM-32](./img/ESP-WROOM-32.png) | ![ESP32-CAM](./img/ESP32-CAM.png) |
+![my-esp3](img/my-esp32.png)
+
 <hr>
 
-The other one is an ESP32-CAM
+The other one is an ESP32-CAM.
+
+There are a few ways to write code runnable on a ESP3. 
+
+one based on Python programming language
+
+- [Micropython](https://micropython.org/download/esp32/)
+
+other two are C/C++ based:
+
+- [Arduino ESP32](https://docs.espressif.com/projects/arduino-esp32/en/latest/getting_started.html);
+- [Espressif IoT Development platform](https://idf.espressif.com/) also known as IDF;
+
+My first device programming experiments will be with the latter of the two, IDF.
+
+## Environment setup
+
+Following the guidelines available on the [official documentation](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html#installation-step-by-step) 
 
