@@ -21,9 +21,19 @@ other two are C/C++ based:
 - [Arduino ESP32](https://docs.espressif.com/projects/arduino-esp32/en/latest/getting_started.html);
 - [Espressif IoT Development platform](https://idf.espressif.com/) also known as IDF;
 
-My first device programming experiments will be with the latter of the two, IDF.
+My first device programming experiments will be with the latter of the two, IDF, firstly because it's the one with its implementation of [FreeRTOS](https://www.freertos.org/).
+
+<br>
+
+![FreeRTOS](img/logo-freertos.jpeg)
 
 ## Environment setup
 
-Following the guidelines available on the [official documentation](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html#installation-step-by-step) 
+### IDF IoT Development Framework
+
+Following the guidelines available in the [official](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html#installation-step-by-step) documentation](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html#installation-step-by-step), it's easy enough to set up a ready-to-use development framework for any major operating system type.
+
+After the setup process, something like that should appear on the file system.
+
+![folder-structure](img/esp-tree.png)
 
