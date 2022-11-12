@@ -10,13 +10,11 @@ The first (and the oldest one) is an ESP-WROOM-32 development board.
 
 The other one is an ESP32-CAM.
 
-There are a few ways to write code runnable on a ESP3. 
+There are a few ways to write code runnable on an ESP3. 
 
-one based on Python programming language
+one based on the Python programming language
 
-- [Micropython](https://micropython.org/download/esp32/)
-
-other two are C/C++ based:
+- [Micropython]The other two are C/C++ based:
 
 - [Arduino ESP32](https://docs.espressif.com/projects/arduino-esp32/en/latest/getting_started.html);
 - [Espressif IoT Development platform](https://idf.espressif.com/) also known as IDF;
@@ -132,13 +130,7 @@ flash it on the controller
 ~ idf -p <port> flash
 ```
 
-in my case 
-
-```cmd
-~ idf -p /dev/cu.usbserial-0001 flash
-```
-
-and, finally open a serial connection and check the result:
+in my case and, finally, open a serial connection and check the result:
 
 ```cmd
 ~ idf -p /dev/cu.usbserial-0001 monitor
