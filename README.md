@@ -53,11 +53,97 @@ We have the environment, and the code editor last, but not least, we need a term
 
 ## First Project
 
+Following the official documentation, we can simply copy one of the sample projects we downloaded in the esp installation folder but, after all, we only need to configure a simple [CMake](https://cmake.org/) project with the following folder structure.
+
+
 ```bash
 └── 01.project-template
     ├── CMakeLists.txt
-    ├── Makefile
     └── main
-        ├── CMakeLists.txt
+        ├── CMakeLists.txt        
+        ├── Makefile        
         └── main.cpp
 ```
+
+In the root folder of the project, we have the first _CMakeLists.txt_ configuration project containing a set of directives and instructions describing the project's source files and targets (executable, library, or both).
+
+```cpp
+cmake_minimum_required(VERSION 3.5)
+
+include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+project(esp32-playground)
+```
+
+In the folder *main* we'll find another _CMakeLists.txt_ configuration with the following content:
+
+```cpp
+idf_component_register(SRCS "main.cpp"
+                       INCLUDE_DIRS ".")
+```
+
+a _Makefile_ 
+
+```cpp
+#
+# This is a project Makefile. It is assumed the directory this Makefile resides in is a
+# project subdirectory.
+#
+
+PROJECT_NAME := esp32-playground
+
+include $(IDF_PATH)/make/project.mk
+```
+
+and, finally, the _main.cpp_ source file
+
+```cpp
+#include <iostream>
+
+extern "C" void app_main(void)
+{
+    std::cout << "Have fun!" << std::endl;
+}
+```
+
+### IDF Configuration
+
+We're almost there. The last step to build and flash our first app is to open a shell and set up the IDF's environment variables with the following command:
+
+```cmd
+~ . $HOME/esp/esp-idf/export.sh
+```
+
+then we need to tell IDF the target platform,
+
+```cmd
+~ cd /src/01.hello-world
+~ idf.py set-target esp32
+```
+
+build the project,
+
+```cmd
+~ idf.py build
+```
+
+flash it on the controller
+
+```cmd
+~ idf -p <port> flash
+```
+
+in my case 
+
+```cmd
+~ idf -p /dev/cu.usbserial-0001 flash
+```
+
+and, finally open a serial connection and check the result:
+
+```cmd
+~ idf -p /dev/cu.usbserial-0001 monitor
+```
+
+![Hello World](img/hello-world.jpg)
+
+That's it.
