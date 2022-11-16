@@ -12,7 +12,8 @@
                 "${config:idf.espAdfPathWin}/components/**",
                 "${workspaceFolder}/**",
                 "/Users/maurizioattanasi/esp/esp-idf/components/log/include",
-                "/Users/maurizioattanasi/esp/esp-idf/components/driver/include"
+                "/Users/maurizioattanasi/esp/esp-idf/components/driver/include",
+                "${workspaceFolder}/src/components/driver"
             ],
             "browse": {
                 "path": [
