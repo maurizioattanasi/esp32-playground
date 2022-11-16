@@ -10,7 +10,15 @@
 
 #include <iostream>
 
+#include "freertos/FreeRTOS.h"
+#include"freertos/task.h"
+
 extern "C" void app_main(void)
-{
-    std::cout << "Have fun!" << std::endl;
+{    
+    int i = 0;
+    while (1)
+    {
+        std::cout << "Have fun! " << i++ << std::endl;
+        vTaskDelay(1000/portTICK_PERIOD_MS);
+    }    
 }
