@@ -12,8 +12,11 @@
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "esp_log.h"
 
 #include "driver.h"
+
+#define TAG "ESP-PLAYGROUND"
 
 using namespace esp32Playground;
 using namespace std;
@@ -28,13 +31,6 @@ extern "C" void app_main(void)
     while (1)
     {
         bool state = _driver.GetState();
-
-        cout << "Have fun! " << i++ << endl;
-
-        if (state)
-            cout << "ON" << endl;
-        else
-            cout << "OFF" << endl;
 
         _driver.SetState(!state);
 
