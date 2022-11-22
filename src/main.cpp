@@ -15,24 +15,37 @@
 #include "esp_log.h"
 
 #include "driver.h"
+#include "main.h"
 
 #define TAG "ESP-PLAYGROUND"
 
 using namespace esp32Playground;
 using namespace std;
 
-Driver _driver;
+// Driver _driver;
+
+void Main::Run(void)
+{
+    _led.SetLevel(_button.Read());
+}
 
 extern "C" void app_main(void)
 {
-    _driver.Init();
+    Main app;
 
-    while (1)
+    while (true)
     {
-        bool state = _driver.GetState();
-
-        _driver.SetState(!state);
-
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        app.Run();
     }
+    
+    // _driver.Init();
+
+    // while (1)
+    // {
+    //     bool state = _driver.GetState();
+
+    //     _driver.SetState(!state);
+
+    //     vTaskDelay(1000 / portTICK_PERIOD_MS);
+    // }
 }
