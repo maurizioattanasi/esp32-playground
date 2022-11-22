@@ -19,6 +19,9 @@ namespace AGPIO
     {
         esp_err_t status{ESP_OK};
 
+        _pin = pin;
+        _activeLow = activeLow;
+
         gpio_config_t cfg;
         cfg.pin_bit_mask = 1ULL << pin;
         cfg.mode = GPIO_MODE_INPUT;
@@ -52,10 +55,9 @@ namespace AGPIO
     int GpioInput::Read(void)
     {
         int level = _activeLow ? !gpio_get_level(_pin) : gpio_get_level(_pin);
-        if (level)
-            ESP_LOGD(TAG, "Read::ON");
-        else
-            ESP_LOGD(TAG, "Read::OFF");
+
+        ESP_LOGD(TAG, "Pin: %d - Level: %d", _pin, level);
+
         return level;
     }
 }

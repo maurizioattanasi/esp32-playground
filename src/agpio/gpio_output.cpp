@@ -73,8 +73,9 @@ namespace AGPIO
     esp_err_t GpioOutput::SetLevel(int level)
     {
         _level = _activeLow ? !level : level;
-        if(_level) ESP_LOGD(TAG, "SetLevel::ON");
-        else ESP_LOGD(TAG, "SetLevel::OFF");
+
+        ESP_LOGD(TAG, "Pin: %d - Level: %d", _pin, _level);
+
         return gpio_set_level(_pin, _level);
     }
 }

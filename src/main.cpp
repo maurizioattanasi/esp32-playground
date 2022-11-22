@@ -36,6 +36,7 @@ extern "C" void app_main(void)
     while (true)
     {
         app.Run();
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
     
     // _driver.Init();
