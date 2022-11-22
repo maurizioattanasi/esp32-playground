@@ -16,6 +16,7 @@
     "files.associations": {
         "*.tcc": "cpp",
         "istream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "iostream": "cpp"
     }
 }

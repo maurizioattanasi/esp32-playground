@@ -25,7 +25,6 @@ Driver _driver;
 
 extern "C" void app_main(void)
 {
-    int i = 0;
     _driver.Init();
 
     while (1)
